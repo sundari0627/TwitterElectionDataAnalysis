@@ -1,0 +1,6 @@
+Dr.Eickholt's raw data - /storage/Twitter-Data
+mallet files - /home/kazav1b/mallet-2.0.8RC3
+Democrat senators follower dump files - /home/kazav1b/democratFollowerDetails
+Republican senators follower dump files - /home/kazav1b/followerdetails
+
+
