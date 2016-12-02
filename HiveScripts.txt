@@ -1,0 +1,32 @@
+CREATE EXTERNAL TABLE democrats(
+			id STRING, 
+			name STRING,
+			retweet STRING, 
+			retweet_count INT
+			tweet_msg STRING) 
+	ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+	STORED AS TEXTFILE 
+	location '/user/kazav1b/project_data/democrats';
+	
+	
+	
+CREATE EXTERNAL TABLE republicans(
+			id STRING, 
+			name STRING,
+			retweet STRING, 
+			retweet_count INT
+			tweet_msg STRING) 
+	ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+	STORED AS TEXTFILE 
+	location '/user/kazav1b/project_data/republicans';
+	
+	 
+	 
+CREATE EXTERNAL TABLE IF NOT EXISTS democratsElections(msg String,count INT)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE location '/user/kazav1b/project_data/democrats/d1';
+
+CREATE EXTERNAL TABLE IF NOT EXISTS republicansElections(msg String,count INT)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE location '/user/kazav1b/project_data/republicans/r1';
+Select * from democratselections ORDER BY count DESC LIMIT 1000;
+
+CREATE EXTERNAL TABLE IF NOT EXISTS republicansElectionSentiment(polarity INT,subjectivity INT,sentiment STRING)ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE location '/user/kazav1b/project_data/republicans/r3';
+
+CREATE EXTERNAL TABLE IF NOT EXISTS democratsElectionSentiment(polarity INT,subjectivity INT,sentiment STRING)ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE location '/user/kazav1b/project_data/democrats/d3';

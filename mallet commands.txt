@@ -1,0 +1,8 @@
+bin/mallet train-topics --input text.sequences --num-topics 50 \
+ --input-state state.gz --no-inference
+ --diagnostics-file diagnostics.xml
+ 
+ 
+  bin/mallet train-topics --input DemocratsFullTweetsOnlyOutput.mallet --num-topics 20 --output-state democrats-state1.gz --output-topic-keys democrats-keys1.txt --output-doc-topics democrats-compostion1.txt --diagnostics-file democrats-diagnostics1.xml
+  
+  bin/mallet train-topics --input RepublicansTweetsOnly.mallet --num-topics 20 --output-state republicans-state1.gz --output-topic-keys republicans-keys1.txt --output-doc-topics republicans-compostion1.txt --diagnostics-file republicans-diagnostics1.xml
